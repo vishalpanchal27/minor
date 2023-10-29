@@ -1,23 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+// import ApiCall from './ApiCalls/ApiCall';
+import Navbar from './components/Navbar';
+import HomePageApi from './ApiCalls/HomePageApi';
+import Home from './pages/Home';
+import { Route, Routes } from 'react-router-dom';
+import Cart from './pages/Cart';
+import Detail from './pages/Detail';
+import Favourite from './pages/Favourite';
+import SignUp from './pages/SignUp';
+import MainPage from './pages/MainPage';
+import Search from './components/Search';
+import ApiCall from './ApiCalls/ApiCall';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="">
+      <Navbar />
+      <ApiCall />
+      <Routes>
+        <Route path='/loginPage' element={<MainPage />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/detail' element={<Detail />} />
+        <Route path='/favourite' element={<Cart />} />
+        <Route path='/cart' element={<Favourite />} />
+        <Route path='/signUp' element={<SignUp />} />
+        <Route path='/search' element={<Search />} />
+      </Routes>
+      <HomePageApi />
+
     </div>
   );
 }
