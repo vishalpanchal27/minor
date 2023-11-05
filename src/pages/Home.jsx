@@ -4,6 +4,7 @@ import Category from '../components/Category';
 import Spinner from '../components/spinner/Spinner';
 import { setOnHover } from '../redux/slices/HomeApiSlice';
 import ImagesSlider from '../components/ImagesSlider';
+import TopOffers from '../components/TopOffers';
 
 const Home = () => {
   const categoryData = useSelector((state) => state.productData.categoryData);
@@ -29,7 +30,8 @@ const Home = () => {
           ))
         }
       </div>
-      <div className='relative top-20 w-full h-96'>
+      <div className='relative top-16 w-full h-96'>
+        <TopOffers />
         <ImagesSlider />
       </div>
       <div className='flex justify-center'>
