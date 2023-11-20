@@ -25,8 +25,8 @@ const Login = () => {
 
     }
     return (
-        <div className='absolute top-44 rounded-2xl left-20 w-3/12 border-4 border-black flex items-center flex-col p-3 z-50' >
-            <p className='text-4xl'>Login Your Account</p>
+        <div className='absolute top-80 xl:top-20 lg:top-20 md:top-20  rounded-2xl xl:w-[25rem] w-[20rem] border-4 border-black flex justify-center md:h- items-center flex-col p-3 z-50' >
+            <p className='text-2xl font-bold xl:text-4xl lg:text-3xl md-text-2xl '>Login Your Account</p>
             <form action="" onSubmit={handleSignUp} className='w-full'>
                 <label htmlFor="" >
                     <p className='mt-4'>Email</p>

@@ -24,7 +24,7 @@ const HomePageApi = () => {
                 sort_by: 'relevance'
             },
             headers: {
-                'X-RapidAPI-Key': 'f6d69c5d55msh18ac11238468099p187b7fjsne31f5136332a',
+                'X-RapidAPI-Key': 'fc3539ca20msh36a16b5c3e8e1b3p1640b7jsn60b346470444',
                 'X-RapidAPI-Host': 'target1.p.rapidapi.com'
             }
         };

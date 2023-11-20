@@ -7,7 +7,7 @@ const SearchSlice = createSlice({
         data: [],
         loading: false,
         error: null,
-        search: 'shoes'
+        search: 'poop'
     },
     reducers: {
         fetchSearchStart(state, action) {
