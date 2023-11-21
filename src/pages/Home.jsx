@@ -5,6 +5,7 @@ import Spinner from '../components/spinner/Spinner';
 import { setOnHover } from '../redux/slices/HomeApiSlice';
 import ImagesSlider from '../components/ImagesSlider';
 
+
 const Home = () => {
   const categoryData = useSelector((state) => state.productData.categoryData);
   const productData = useSelector((state) => state.productData.data);
