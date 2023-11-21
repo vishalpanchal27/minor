@@ -39,17 +39,17 @@ const Navbar = () => {
                                     }
                                     {
                                         <NavLink to='/'>
-                                            <li className='text-lg cursor-pointer flex'> <span className='pt-1 pr-1'><BiHomeAlt2 /></span>  HOME</li>
+                                            <li className='text-md font-serif cursor-pointer flex'> <span className='pt-1 pr-1'><BiHomeAlt2 /></span>  HOME</li>
                                         </NavLink>
                                     }
-                                    {<li className='cursor-pointer text-lg flex'
+                                    {<li className='cursor-pointer text-md font-serif  flex'
                                         onMouseEnter={() => (dispatch(setOnHover('flex')))}
                                         onMouseLeave={() => (dispatch(setOnHover('none')))}
                                     > <span className='pt-1 pr-1' ><MdCategory /></span> CATEGORY</li>
                                     }
                                     {
                                         <NavLink to='/cart'>
-                                            <li className='cursor-pointer text-lg flex relative'> <span className='pt-1 pr-1 text-black'><AiOutlineShoppingCart /></span>
+                                            <li className='cursor-pointer text-md font-serif  flex relative'> <span className='pt-1 pr-1 text-black'><AiOutlineShoppingCart /></span>
                                                 {cart.length > 0 &&
                                                     <span className='absolute -top-[3px] bg-green-700 py-[2px] px-[6px] text-white  text-xs rounded-full animate-bounce -right-3'>{cart.length}</span>
                                                 }
@@ -58,13 +58,13 @@ const Navbar = () => {
                                     }
                                     {
                                         <NavLink to='/favourite'>
-                                            <li className='cursor-pointer text-lg flex'> <span className='pt-1 pr-1'><BiLike /></span> FAVOURITE</li>
+                                            <li className='cursor-pointer text-md flex font-serif '> <span className='pt-1 pr-1'><BiLike /></span> FAVOURITE</li>
                                         </NavLink>
 
                                     }
                                     {
                                         <NavLink to='/loginPage'>
-                                            <li className='cursor-pointer text-lg flex'> <span className='pt-1 pr-1'><RiAccountPinCircleLine /></span> SIGN UP</li>
+                                            <li className='cursor-pointer text-md flex font-serif '> <span className='pt-1 pr-1'><RiAccountPinCircleLine /></span> SIGN UP</li>
                                         </NavLink>
                                     }
                                 </ul>
