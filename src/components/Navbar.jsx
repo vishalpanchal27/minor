@@ -39,13 +39,13 @@ const Navbar = () => {
                                     }
                                     {
                                         <NavLink to='/'>
-                                            <li className='text-lg cursor-pointer flex'> <span className='pt-1 pr-1'><BiHomeAlt2 /></span>  Home</li>
+                                            <li className='text-lg cursor-pointer flex'> <span className='pt-1 pr-1'><BiHomeAlt2 /></span>  HOME</li>
                                         </NavLink>
                                     }
                                     {<li className='cursor-pointer text-lg flex'
                                         onMouseEnter={() => (dispatch(setOnHover('flex')))}
                                         onMouseLeave={() => (dispatch(setOnHover('none')))}
-                                    > <span className='pt-1 pr-1' ><MdCategory /></span> Category</li>
+                                    > <span className='pt-1 pr-1' ><MdCategory /></span> CATEGORY</li>
                                     }
                                     {
                                         <NavLink to='/cart'>
@@ -53,18 +53,18 @@ const Navbar = () => {
                                                 {cart.length > 0 &&
                                                     <span className='absolute -top-[3px] bg-green-700 py-[2px] px-[6px] text-white  text-xs rounded-full animate-bounce -right-3'>{cart.length}</span>
                                                 }
-                                                Cart</li>
+                                                CART</li>
                                         </NavLink>
                                     }
                                     {
                                         <NavLink to='/favourite'>
-                                            <li className='cursor-pointer text-lg flex'> <span className='pt-1 pr-1'><BiLike /></span> Favourite</li>
+                                            <li className='cursor-pointer text-lg flex'> <span className='pt-1 pr-1'><BiLike /></span> FAVOURITE</li>
                                         </NavLink>
 
                                     }
                                     {
                                         <NavLink to='/loginPage'>
-                                            <li className='cursor-pointer text-lg flex'> <span className='pt-1 pr-1'><RiAccountPinCircleLine /></span> SignUp</li>
+                                            <li className='cursor-pointer text-lg flex'> <span className='pt-1 pr-1'><RiAccountPinCircleLine /></span> SIGN UP</li>
                                         </NavLink>
                                     }
                                 </ul>
@@ -101,23 +101,23 @@ const Navbar = () => {
                                         <ul className='flex flex-col gap-5'>
                                             {
                                                 <NavLink to='/'>
-                                                    <li className='text-lg mt-2 cursor-pointer flex' onClick={() => setMenu(!menu)}> <span className='pt-1 pr-1'><BiHomeAlt2 /></span>  Home</li>
+                                                    <li className='text-lg mt-2 cursor-pointer flex' onClick={() => setMenu(!menu)}> <span className='pt-1 pr-1'><BiHomeAlt2 /></span>  HOME</li>
                                                 </NavLink>
                                             }
                                             {
                                                 <NavLink to='/cart'>
-                                                    <li className='cursor-pointer text-lg flex' onClick={() => setMenu(!menu)}> <span className='pt-1 pr-1 text-black'><AiOutlineShoppingCart /></span> Cart</li>
+                                                    <li className='cursor-pointer text-lg flex' onClick={() => setMenu(!menu)}> <span className='pt-1 pr-1 text-black'><AiOutlineShoppingCart /></span> CART</li>
                                                 </NavLink>
                                             }
                                             {
                                                 <NavLink to='/favourite'>
-                                                    <li className='cursor-pointer text-lg flex' onClick={() => setMenu(!menu)}> <span className='pt-1 pr-1'><BiLike /></span> Favourite</li>
+                                                    <li className='cursor-pointer text-lg flex' onClick={() => setMenu(!menu)}> <span className='pt-1 pr-1'><BiLike /></span> FAVOURITE</li>
                                                 </NavLink>
 
                                             }
                                             {
                                                 <NavLink to='/loginPage'>
-                                                    <li className='cursor-pointer text-lg flex mb-2' onClick={() => setMenu(!menu)}> <span className='pt-1 pr-1'><RiAccountPinCircleLine /></span> SignUp</li>
+                                                    <li className='cursor-pointer text-lg flex mb-2' onClick={() => setMenu(!menu)}> <span className='pt-1 pr-1'><RiAccountPinCircleLine /></span> SIGN UP</li>
                                                 </NavLink>
                                             }
                                         </ul>
