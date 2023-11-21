@@ -11,6 +11,7 @@ import SignUp from './pages/SignUp';
 import MainPage from './pages/MainPage';
 import Search from './components/Search';
 import ApiCall from './ApiCalls/ApiCall';
+// import NotFound from './pages/NotFound';
 
 
 
@@ -27,6 +28,7 @@ function App() {
         <Route path='/cart' element={<Favourite />} />
         <Route path='/signUp' element={<SignUp />} />
         <Route path='/search' element={<Search />} />
+        {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
       <HomePageApi />
 

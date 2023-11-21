@@ -1,7 +1,8 @@
 // import { toHaveStyle } from '@testing-library/jest-dom/matchers';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa'
+import { toast } from 'react-toastify';
 
 const SignUp = () => {
   const navigate = useNavigate()
@@ -11,11 +12,8 @@ const SignUp = () => {
     password: "",
     confirmPassword: "",
   })
-  const [show, setShow] = useState({
-    createPassword: false,
-    confirmPassword: false
-  })
-
+  const [create, setCreate] = useState(false)
+  const [confirm, setConfirm] = useState(false)
   const handleFormData = (event) => {
     const { name, value } = event.target
     setFormData(prevData => {
@@ -30,23 +28,17 @@ const SignUp = () => {
     event.preventDefault();
     console.log(formData)
     if (formData.confirmPassword === formData.password) {
-      navigate('/home')
+      navigate('/')
     }
     else {
-
+      toast.warning('Password does not Match')
     }
   }
 
 
-
-  const showAndHideEffect = () => {
-
-  };
-
-
   return (
-    <div className='absolute top-44 rounded-2xl left-20 w-3/12 border-4 border-black flex items-center flex-col p-3 z-50' >
-      <p className='text-4xl'>Sign Up</p>
+    <div className='absolute top-80 xl:top-20 lg:top-20 md:top-20  rounded-2xl xl:w-[25rem] w-[20rem] border-4 border-black flex justify-center md:h- items-center flex-col p-3 z-50' >
+      <p className='text-2xl font-bold xl:text-4xl lg:text-3xl md-text-2xl '>Sign Up</p>
       <form action="" onSubmit={handleSignUp} className='w-full'>
         <label htmlFor="" >
           Username
@@ -73,7 +65,7 @@ const SignUp = () => {
         <label htmlFor="" className='w-full'>
           Password
           <div className='flex bg-gray-300 rounded-md'>
-            <input type="password"
+            <input type={create ? 'text' : 'password'}
               className='w-full h-12 text-lg pl-3 bg-gray-300 rounded-md outline-none'
               required
               name='password'
@@ -81,11 +73,10 @@ const SignUp = () => {
               value={formData.password}
               onChange={handleFormData}
             />
-            <div className='flex items-center pr-4 bg-red-900'>
-              {
-                show.createPassword ?
-                  (<span onClick={showAndHideEffect}> <FaRegEye /></span>) :
-                  (<span onClick={showAndHideEffect}><FaRegEyeSlash /></span>)
+            <div className='flex items-center pr-4 text-xl'>
+              {create ?
+                (<span onClick={() => setCreate(false)}  > <FaRegEye /></span>) :
+                (<span onClick={() => setCreate(true)} ><FaRegEyeSlash /></span>)
               }
             </div>
           </div>
@@ -93,7 +84,7 @@ const SignUp = () => {
         <label htmlFor="" className='w-full'>
           Confirm password
           <div className='flex bg-gray-300 rounded-md'>
-            <input type="password"
+            <input type={confirm ? 'text' : 'password'}
               className='w-full h-12 text-lg pl-3 bg-gray-300 rounded-md outline-none'
               required
               name='confirmPassword'
@@ -101,13 +92,12 @@ const SignUp = () => {
               value={formData.confirmPassword}
               onChange={handleFormData}
             />
-            <div className='flex items-center pr-4 bg-red-900'>
-              {
-
-                show.confirmPassword ?
-                  (<span onClick={showAndHideEffect}> <FaRegEye /></span>) :
-                  (<span onClick={showAndHideEffect}><FaRegEyeSlash /></span>)
-              }
+            <div className='flex items-center pr-4 text-xl'>
+              {confirm ? (
+                <span onClick={() => setConfirm(false)}><FaRegEye /></span>
+              ) : (
+                <span onClick={() => setConfirm(true)}><FaRegEyeSlash /></span>
+              )}
             </div>
           </div>
         </label>

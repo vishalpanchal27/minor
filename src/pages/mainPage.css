@@ -1,11 +1,12 @@
 .signUpMainBackground {
-
     background: rgb(0, 212, 255);
     background: linear-gradient(243deg, rgba(0, 212, 255, 1) 0%, rgba(168, 163, 252, 1) 0%, rgba(255, 255, 255, 1) 22%);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 100.5vh;
+    height: 92vh;
+    position: absolute;
+    z-index: 0;
 
 }
 

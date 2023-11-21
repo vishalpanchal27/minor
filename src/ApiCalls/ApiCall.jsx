@@ -113,7 +113,7 @@ const ApiCall = () => {
             language: 'en'
         },
         headers: {
-            'X-RapidAPI-Key': '4897f6ebecmshd0346ddbd9e3fbap172918jsn04c5be5b924f',
+            'X-RapidAPI-Key': 'b2af1f2cf7msh6a3cec92e90d7aep1c9421jsn7e194ab85a4f',
             'X-RapidAPI-Host': 'real-time-product-search.p.rapidapi.com'
         }
     };

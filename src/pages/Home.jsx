@@ -4,7 +4,7 @@ import Category from '../components/Category';
 import Spinner from '../components/spinner/Spinner';
 import { setOnHover } from '../redux/slices/HomeApiSlice';
 import ImagesSlider from '../components/ImagesSlider';
-import TopOffers from '../components/TopOffers';
+
 
 const Home = () => {
   const categoryData = useSelector((state) => state.productData.categoryData);
@@ -14,8 +14,8 @@ const Home = () => {
 
   const dispatch = useDispatch()
   return (
-    <div className='flex justify-center bg-slate-100 flex-col'>
-      <div className='flex flex-col absolute top-7 right-72 p-2  bg-slate-200 overflow-hidden h-56 z-50 w-3/12 flex-wrap rounded-md ' style={{ display: `${onHover}` }}
+    <div className={`flex justify-center bg-slate-100 flex-col ${productData.length < 1 ? 'h-[90vh]' : ''}`}>
+      <div className='flex flex-col absolute top-10 right-72 p-2 bg-slate-100 shadow-xl overflow-hidden h-56 z-50 w-3/12 flex-wrap rounded-md  ' style={{ display: `${onHover}` }}
         onMouseEnter={() => dispatch(setOnHover('flex'))}
         onMouseLeave={() => dispatch(setOnHover('none'))}
       >
@@ -30,12 +30,13 @@ const Home = () => {
           ))
         }
       </div>
-      <div className='relative top-16 w-full h-96'>
-        <TopOffers />
-        <ImagesSlider />
-      </div>
-      <div className='flex justify-center'>
-        <div className='grid lg:grid-cols-4 md:grid-cols-3 w-10/12 place-items-center gap-5 overflow-hidden place-content-center p-5 '>
+      {productData.length > 0 &&
+        <div className='relative top-16 w-full z-0 h-[23rem]'>
+          <ImagesSlider />
+        </div>
+      }
+      <div className={`flex justify-center relative xl:top-16 lg:top-0 md:top-[-3rem] sm:top-0 h-full bg-slate-100 ${window.innerWidth < 430 ? 'top-[-2rem]' : ''} `}>
+        <div className='grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xl:w-10/12 lg:w-11/12 place-items-center gap-5 overflow-hidden place-content-center p-5 lg:gap-x-12 md:gap-x-5 relative '>
           {loading ?
             (<Spinner />) :
             (
