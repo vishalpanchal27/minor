@@ -31,7 +31,7 @@ const Home = () => {
         }
       </div>
       {productData.length > 0 &&
-        <div className='relative top-16 w-full z-0 h-[23rem]'>
+        <div className='relative top-16  z-0 h-[23rem] '>
           <ImagesSlider />
         </div>
       }

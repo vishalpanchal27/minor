@@ -38,7 +38,7 @@ const Search = () => {
                         ''
                     )
                 ) : (
-                    <div className='h-[36rem]'>
+                    <div className='h-[36rem] w-[50rem]'>
                         <SearchLoader />
                     </div>
                 )}
@@ -46,7 +46,7 @@ const Search = () => {
             {searching === 'poop' &&
                 <div className='flex justify-center items-center top-20 absolute flex-col'>
                     <p className='text-3xl font-bold font-mono mb-5'>Top Searches</p>
-                    <ul className='flex flex-row gap-5'>
+                    <ul className='flex flex-col gap-1 xl:gap-5 lg:gap-5 md:gap-5 sm:gap-4 xl:flex-row lg:flex-row md:flex-row sm:flex-row  '>
                         {
                             <li className='rounded-md hover:scale-110 overflow-hidden hover:border-2 hover:border-gray-500 font-bold px-7 py-1 shadow-xl cursor-pointer' onClick={() => handleSearch('tv')}>Tv</li>
                         }
