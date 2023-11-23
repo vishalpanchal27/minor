@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/minor/static/css/main.6934f018.css",
+    "main.js": "/minor/static/js/main.f4f14d59.js",
+    "static/js/787.8287823c.chunk.js": "/minor/static/js/787.8287823c.chunk.js",
+    "static/media/Online Shopping (HD).png": "/minor/static/media/Online Shopping (HD).54867e0bf16b28643463.png",
+    "static/media/Gift Box (HD).png": "/minor/static/media/Gift Box (HD).52c396679972d73d1f6a.png",
+    "static/media/giphy2.gif": "/minor/static/media/giphy2.ac45b8f9d4da7028cbf1.gif",
+    "static/media/Store.png": "/minor/static/media/Store.25094c3d655db2a16d1e.png",
+    "static/media/first.jpg": "/minor/static/media/first.b3ca49395de66ed0fda3.jpg",
+    "static/media/Happy Shopping.png": "/minor/static/media/Happy Shopping.7fcc0ea962417138362e.png",
+    "static/media/fifth.jpg": "/minor/static/media/fifth.2a4edeedf739d992bb5d.jpg",
+    "static/media/third.jpg": "/minor/static/media/third.c13141d7c1290c668844.jpg",
+    "static/media/second.jpg": "/minor/static/media/second.559e369cb58c72797d94.jpg",
+    "static/media/fourth.jpg": "/minor/static/media/fourth.f53fc9dc721ebd605656.jpg",
+    "static/media/grocery.jpg": "/minor/static/media/grocery.b2b12bbc9074fd406d3f.jpg",
+    "static/media/fashion.jpg": "/minor/static/media/fashion.d1d48cebbc66a75a631c.jpg",
+    "static/media/tv and application.jpg": "/minor/static/media/tv and application.6a9cebadc745ab575a1c.jpg",
+    "static/media/toys.jpg": "/minor/static/media/toys.94dec81cfea1cf809e62.jpg",
+    "static/media/mobile.jpg": "/minor/static/media/mobile.a9af59e17341db9b2279.jpg",
+    "static/media/electronics.jpg": "/minor/static/media/electronics.c0ff4639906b01bd3c69.jpg",
+    "static/media/furniture.jpg": "/minor/static/media/furniture.a06539bbe7887b649c0c.jpg",
+    "static/media/kitchen.jpg": "/minor/static/media/kitchen.cbe3919d087e6dec389a.jpg",
+    "index.html": "/minor/index.html",
+    "main.6934f018.css.map": "/minor/static/css/main.6934f018.css.map",
+    "main.f4f14d59.js.map": "/minor/static/js/main.f4f14d59.js.map",
+    "787.8287823c.chunk.js.map": "/minor/static/js/787.8287823c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6934f018.css",
+    "static/js/main.f4f14d59.js"
+  ]
+}
