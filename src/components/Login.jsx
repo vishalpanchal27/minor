@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Spinner from '../components/spinner/Spinner'
 
 const Login = () => {
+    const [loadingSignUp, setloadSignUp] = useState(0)
     const navigate = useNavigate()
     const [formData, setFormData] = useState({
         email: "",
@@ -18,12 +20,36 @@ const Login = () => {
         })
     }
 
-    const handleSignUp = (event) => {
+    const handleSignUp = async (event) => {
         event.preventDefault();
-        console.log(formData)
-        navigate('/home')
+        console.log(formData.email)
+        setloadSignUp(1);
+        const respon = await fetch(`https://ecom-otdq.onrender.com/getUserEmail/${formData.email}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            },
+        })
 
+        if (respon.status === 404) {
+            alert("Invalid Email")
+            setloadSignUp(0)
+        }
+        else {
+            const data = await respon.json();
+            console.log(data)
+            if (data.password == formData.password) {
+                navigate('/')
+                setloadSignUp(0)
+            }
+            else{
+                alert("Invalid Password")
+                setloadSignUp(0)
+            }
+            //    console.log(formData)
+        }
     }
+
     return (
         <div className='absolute top-80 xl:top-20 lg:top-20 md:top-20  rounded-2xl xl:w-[25rem] w-[20rem] border-4 border-black flex justify-center md:h- items-center flex-col p-3 z-50' >
             <p className='text-2xl font-bold xl:text-4xl lg:text-3xl md-text-2xl '>Login Your Account</p>
@@ -58,6 +84,8 @@ const Login = () => {
                 </div>
                 <p className='text-gray-400 text-sm'>By continuing, you agree to Amazon's Conditions of Use and Privacy Notice.</p>
             </form>
+            {loadingSignUp ?
+        (<Spinner />) : console.log("this")}
         </div>
     )
 }

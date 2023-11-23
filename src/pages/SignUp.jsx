@@ -1,10 +1,13 @@
 // import { toHaveStyle } from '@testing-library/jest-dom/matchers';
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa'
 import { toast } from 'react-toastify';
+import Spinner from '../components/spinner/Spinner'
 
-const SignUp = () => {
+
+const SignUp = (props) => {
+  const [loadingSignUp, setloadSignUp] = useState(0)
   const navigate = useNavigate()
   const [formData, setFormData] = useState({
     username: "",
@@ -24,17 +27,46 @@ const SignUp = () => {
     })
   }
 
-  const handleSignUp = (event) => {
+  const handleSignUp = async (event) => {
     event.preventDefault();
     console.log(formData)
     if (formData.confirmPassword === formData.password) {
-      navigate('/')
+
+      const NewUser = {
+        "Username": formData.username,
+        "password": formData.password,
+        "email": formData.email,
+        "Favourite":0,
+        "cart":0
+      }
+
+      setloadSignUp(1);
+
+      const respon = await fetch(`https://ecom-otdq.onrender.com/register`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(NewUser)
+      })
+      if (respon.status === 404 || !respon) {
+        setloadSignUp(0)
+        alert("Email already exist")
+      }
+      else if (respon.status === 403) {
+        setloadSignUp(0)
+        alert("Please fill the form")
+      }
+      else {
+        console.log(NewUser)
+        setloadSignUp(0);
+        navigate('/')
+      }
     }
     else {
       toast.warning('Password does not Match')
     }
   }
-
 
   return (
     <div className='absolute top-80 xl:top-20 lg:top-20 md:top-20  rounded-2xl xl:w-[25rem] w-[20rem] border-4 border-black flex justify-center md:h- items-center flex-col p-3 z-50' >
@@ -106,6 +138,8 @@ const SignUp = () => {
         </div>
         <p className='text-gray-400 text-sm'>By continuing, you agree to Amazon's Conditions of Use and Privacy Notice.</p>
       </form>
+      {loadingSignUp ?
+        (<Spinner />) : console.log("spinner")}
     </div>
   );
 };
