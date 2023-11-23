@@ -20,13 +20,26 @@ const HomePageApi = () => {
         dispatch(fetchStart());
         try {
             const response = await axios.request({
-                // Your options for the product data API
+                method: 'GET',
+                url: 'https://target1.p.rapidapi.com/products/v2/list',
+                params: {
+                    store_id: '911',
+                    category: `${category}`,
+                    count: '20',
+                    offset: '6',
+                    default_purchasability_filter: 'true',
+                    sort_by: 'relevance'
+                },
+                headers: {
+                    'X-RapidAPI-Key': 'ceaa6afcaamsh99619baf83e6f76p14868cjsn80d47a7979f4',
+                    'X-RapidAPI-Host': 'target1.p.rapidapi.com'
+                }
             });
             const output = response.data.data.search.products;
             dispatch(fetchFulfilled(output));
         } catch (error) {
-            console.error('Error fetching product data:', error);
-            dispatch(fetchFailure(error));
+            console.error('Error fetching product data:', error.message);
+            dispatch(fetchFailure(error.message || 'Unknown error'));
         }
     };
 
@@ -37,8 +50,8 @@ const HomePageApi = () => {
             const response = await axios.request(categoryApi);
             dispatch(fetchCategoryFulfilled(response.data.metadata.children));
         } catch (error) {
-            console.error('Error fetching category data:', error);
-            dispatch(fetchCategoryFailure(error));
+            console.error('Error fetching category data:', error.message);
+            dispatch(fetchCategoryFailure(error.message || 'Unknown error'));
         }
     };
 
@@ -50,7 +63,7 @@ const HomePageApi = () => {
         categoryApiCall();
     }, []);
 
-    return null; // Adjust this based on your component structure
+    // No need to return anything from the component
 };
 
 export default HomePageApi;
